@@ -1,0 +1,52 @@
+version: '3'
+services:
+  web:
+    container_name: laravel_api_web
+    build:
+      context: ./docker/web
+      args:
+        HOST_UID: ${HOST_UID}
+    restart: always
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+
+  nginx:
+    container_name: laravel_api_nginx
+    build:
+      context: ./docker/nginx
+      args:
+        NGINX_ENV: ${NGINX_ENV}
+    depends_on:
+      - web
+    links:
+      - web
+    volumes:
+      - .:/var/www/html
+    restart: always
+
+  db:
+    container_name: laravel_api_db
+    build:
+      context: ./docker/postgres
+      args:
+        HOST_UID: ${HOST_UID}
+    restart: always
+    volumes:
+      - ./docker/volumes/postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: secret
+      POSTGRES_USER: postgres
+      POSTGRES_DB: api
+      PGDATA: /var/lib/postgresql/data/pgdata
+
+  redis:
+    container_name: laravel_api_redis
+    restart: always
+    build:
+      context: ./docker/redis
+      args:
+        HOST_UID: ${HOST_UID}
+    volumes:
+      - ./docker/volumes/redis:/data

@@ -1,0 +1,15 @@
+{
+    "name": "API",
+    "alias": "api",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "App\\Modules\\API\\Providers\\APIServiceProvider",
+        "App\\Modules\\API\\Providers\\EventServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
