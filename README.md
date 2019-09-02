@@ -5,6 +5,15 @@ A RESTful application boilerplate in Laravel taking best practices and utilizing
 
 It includes all commonly used configurations that would allow you to focus on adding new features to your application.
 
+FEATURES
+------------
+- RESTful endpoints in the widely accepted format
+- JWT-based authentication
+- Data validation
+- Full test coverage
+- Sign in, Sign up, Forgot Password, Update User Profile, Upload User Avatar
+- Support Docker
+
 REQUIREMENTS
 ------------
 
