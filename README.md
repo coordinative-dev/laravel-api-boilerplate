@@ -5,6 +5,8 @@ A RESTful application boilerplate in Laravel taking best practices and utilizing
 
 It includes all commonly used configurations that would allow you to focus on adding new features to your application.
 
+Demo: https://laravel-api.demo.coordinative.dev/api/documentation
+
 FEATURES
 ------------
 - RESTful endpoints in the widely accepted format
