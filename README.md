@@ -1,6 +1,7 @@
 Laravel API Boilerplate
 ================================
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/coordinative-dev/laravel-api-boilerplate/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/coordinative-dev/laravel-api-boilerplate/?branch=master)
+[![Build Status](https://travis-ci.com/coordinative-dev/laravel-api-boilerplate.svg?branch=master)](https://travis-ci.com/coordinative-dev/laravel-api-boilerplate)
 
 A RESTful application boilerplate in Laravel taking best practices and utilizing best available packages and tools.
 
