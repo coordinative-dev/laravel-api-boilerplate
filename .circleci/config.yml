@@ -22,7 +22,7 @@ jobs:
       - checkout
 
       - run: sudo apt update && sudo apt install zlib1g-dev libsqlite3-dev
-      - run: sudo docker-php-ext-install zip
+      - run: sudo docker-php-ext-install -j$(nproc) iconv exif bcmath intl zip
 
       # Download and cache dependencies
 
@@ -55,4 +55,10 @@ jobs:
             - node_modules
             - ~/.yarn
 
-      - run: ./bin/phpunit
+      - run:
+          name: Setup Environment
+          command: cp .env.testing.example .env.testing
+
+      - run:
+          name: Run Tests
+          command: ./bin/phpunit
