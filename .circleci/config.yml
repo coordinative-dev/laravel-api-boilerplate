@@ -55,4 +55,10 @@ jobs:
             - node_modules
             - ~/.yarn
 
-      - run: ./bin/phpunit
+      - run:
+          name: Setup Environment
+          command: cp .env.testing.example .env.testing
+
+      - run:
+          name: Run Tests
+          command: ./bin/phpunit
