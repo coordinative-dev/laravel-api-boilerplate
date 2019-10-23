@@ -15,6 +15,7 @@ FEATURES
 - Full test coverage
 - Sign in, Sign up, Forgot Password, Update User Profile, Upload User Avatar
 - Support Docker
+- CircleCI integration
 
 REQUIREMENTS
 ------------
