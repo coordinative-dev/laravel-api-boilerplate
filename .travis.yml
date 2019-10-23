@@ -1,0 +1,15 @@
+language: php
+
+php:
+  - 7.3
+
+install:
+  - cp .env.testing.example .env.testing
+  - travis_retry composer install --no-interaction --prefer-dist --no-suggest
+
+before_script:
+  - sudo apt update && sudo apt install zlib1g-dev libsqlite3-dev
+  - sudo docker-php-ext-install -j$(nproc) iconv exif bcmath intl zip
+
+script:
+  - ./bin/phpunit
